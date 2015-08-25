@@ -9,8 +9,3 @@
 
 <h3> <%= link_to "Create New Venue Here", new_concert_hall_path %> </h3>
 <h3> <%= link_to "Create New Band Here", new_band_path %> </h3>
-
-<%= form_tag '/events', method: :get %>
-	<%= date_field_tag "date" %>
-	<%= submit_tag("Search") %>
-	<%= hidden_field_tag :id, value: 1 %> 

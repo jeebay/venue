@@ -4,7 +4,14 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+
+    if(params[:date])
+      @events = Event.where(date:params[:date]) 
+      render :index
+    else 
+      @events = Event.all
+    end
+
   end
 
   # GET /events/1
@@ -61,11 +68,11 @@ class EventsController < ApplicationController
     end
   end
 
-  def search
-    day = params[:date]
-    @events = Event.find_by({date: "#{day}"})
-    render :show
-  end
+  # def search
+  #   day = params[:date]
+  #   @events = Event.find_by({date: "#{day}"})
+  #   render :show
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,8 +1,8 @@
-<h1> Events On <%= @events[0].date %>: </h1>
+<h1> All Events: </h1>
 
 <% @events.each do |x| %>
 
-<h2> <%= x.band.name %> </h2>
+<h2> <%= x.date %> | <%= x.band.name %> | <%= x.concert_hall.name %> </h2>
 <h3> Alcohol Served: <%= x.alcohol_served %></h3>
 <% end %>
 

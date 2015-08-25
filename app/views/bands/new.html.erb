@@ -1,5 +1,10 @@
-<h1>New Band</h1>
+<h1> Create A New Band Below: </h1>
 
-<%= render 'form' %>
+<%= form_for @band do |f| %>
+	<%= f.text_field :name, placeholder: "Name" %></br>
+	<%= f.text_field :genre, placeholder: "Genre" %></br>
+	<%= f.label(:explicit_lyrics, "Explicit Lyrics?") %>
+	<%= f.check_box(:explicit_lyrics) %> </br>
+	<%= f.submit %>
 
-<%= link_to 'Back', bands_path %>
+<% end %>

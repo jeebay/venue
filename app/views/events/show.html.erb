@@ -1,14 +1,7 @@
-<p id="notice"><%= notice %></p>
+<h1> Events On <%= @events[0].date %>: </h1>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+<% @events.each do |x| %>
 
-<p>
-  <strong>Alcohol served:</strong>
-  <%= @event.alcohol_served %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<h2> <%= x.band.name %> </h2>
+<h3> Alcohol Served: <%= x.alcohol_served %></h3>
+<% end %>

@@ -10,6 +10,7 @@ class ConcertHallsController < ApplicationController
   # GET /concert_halls/1
   # GET /concert_halls/1.json
   def show
+    @event = Event.new
   end
 
   # GET /concert_halls/new
@@ -60,6 +61,7 @@ class ConcertHallsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

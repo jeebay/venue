@@ -1,24 +1,19 @@
-<p id="notice"><%= notice %></p>
+<h1> <%= @concert_hall.name %> </h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @concert_hall.name %>
-</p>
+<% @concert_hall.events.each do |x| %>
 
-<p>
-  <strong>City:</strong>
-  <%= @concert_hall.city %>
-</p>
+<h2> <%= x.band.name %> </h2>
+<h2> <%= x.date %> </h2>
+<h3> Alcohol Served: <%= x.alcohol_served %></h3>
+<% end %>
 
-<p>
-  <strong>State:</strong>
-  <%= @concert_hall.state %>
-</p>
 
-<p>
-  <strong>Family friendly:</strong>
-  <%= @concert_hall.family_friendly %>
-</p>
+<%= form_for @event do |f| %>
+	<%= f.date_field :date %>
+	<%= f.label(:alcohol_served, "Alcohol Served?") %>
+	<%= f.check_box(:alcohol_served) %> </br>
+	<%= f.hidden_field :concert_hall_id, value: @concert_hall.id %>
+	Band: <%= f.collection_select :band_id, Band.all, :id, :name %> </br>
+	<%= f.submit %>
 
-<%= link_to 'Edit', edit_concert_hall_path(@concert_hall) %> |
-<%= link_to 'Back', concert_halls_path %>
+<% end %>

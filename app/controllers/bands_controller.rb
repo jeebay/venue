@@ -28,7 +28,7 @@ class BandsController < ApplicationController
 
     respond_to do |format|
       if @band.save
-        format.html { redirect_to @band, notice: 'Band was successfully created.' }
+        format.html { redirect_to concert_halls_path, notice: 'Band was successfully created.' }
         format.json { render :show, status: :created, location: @band }
       else
         format.html { render :new }

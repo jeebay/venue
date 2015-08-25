@@ -2,11 +2,12 @@
 
 <% @concert_hall.events.each do |x| %>
 
-<h2> <%= x.band.name %> </h2>
-<h2> <%= x.date %> </h2>
-<h3> Alcohol Served: <%= x.alcohol_served %></h3>
-<% end %>
+<h3> <%= x.band.name %> </h3>
+<h4> <%= x.date %> </h4>
+<h4> Alcohol Served: <%= x.alcohol_served %></h4>
+<% end %></br>
 
+<h2> Add New Event Below: </h2>
 
 <%= form_for @event do |f| %>
 	<%= f.date_field :date %>

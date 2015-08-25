@@ -6,6 +6,7 @@
 <h3> Alcohol Served: <%= x.alcohol_served %></h3>
 <% end %>
 
+
 <%= form_tag '/events', method: :get %>
 	<%= date_field_tag "date" %>
 	<%= submit_tag("Search") %>

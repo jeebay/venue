@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @concert_hall.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @concert_hall.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @concert_hall.state %>
+</p>
+
+<p>
+  <strong>Family friendly:</strong>
+  <%= @concert_hall.family_friendly %>
+</p>
+
+<%= link_to 'Edit', edit_concert_hall_path(@concert_hall) %> |
+<%= link_to 'Back', concert_halls_path %>

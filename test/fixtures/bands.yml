@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  genre: 
+  genre: MyString
   explicit_lyrics: false
 
 two:
   name: MyString
-  genre: 
+  genre: MyString
   explicit_lyrics: false
